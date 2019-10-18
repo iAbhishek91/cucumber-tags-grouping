@@ -10,14 +10,14 @@ const data = [
           },
         },
         {
-          name: '@on',
+          name: '@SW_ABC_ON',
           location: {
             line: 1,
             column: 9,
           },
         },
         {
-          name: '@secondB',
+          name: '@SW_ABC_ON',
           location: {
             line: 13,
             column: 3,
@@ -35,14 +35,14 @@ const data = [
     pickle: {
       tags: [
         {
-          name: '@groupB',
+          name: '@SW_ABC_ON',
           location: {
             line: 1,
             column: 1,
           },
         },
         {
-          name: '@on',
+          name: '@SW_ABC_ON',
           location: {
             line: 1,
             column: 9,
@@ -74,16 +74,16 @@ const data = [
     uri: 'features/groupB.feature',
   },
 ];
-const tagForGrouping = /SW_/;
+const data1 = /SW_/;
 
 
 // extract all tags from scenario
-const extractAllTags = (testCases) => {
+const extractAllTags = (scenarios) => {
   try {
-    return testCases.map((testCase) => {
-      if (testCase.length === 0) return [];
+    return scenarios.map((scenario) => {
+      if (scenario.length === 0) return [];
 
-      return testCase.pickle.tags.map((tag) => tag.name);
+      return scenario.pickle.tags.map((tag) => tag.name);
     });
   } catch (error) {
     throw new Error('Group Builder failed.');
@@ -91,17 +91,22 @@ const extractAllTags = (testCases) => {
 };
 
 
-const extractAllGroups = () => {
-  
-}
+const buildUniqueGroups = (scenariosTags, tagForGrouping) => {
+  // array of array of all the group-tags for each scenario
+  const scenariosGroupTags = scenariosTags.map(
+    (scenarioTags) => scenarioTags.filter((scenarioTag) => tagForGrouping.test(scenarioTag)),
+  );
 
-const groups = (testCases, tagForGrouping) => {
-  if (!Array.isArray(testCases)) {
+  const scenariosUniqueTags = scenariosGroupTags.map((scenarioGroupTags) => [...new Set(scenarioGroupTags)]);
+  return [...new Set(scenariosUniqueTags.map((scenarioUniqueTags) => scenarioUniqueTags.join()))];
+};
+
+
+export default (scenarios, tagForGrouping) => {
+  if (!Array.isArray(scenarios)) {
     throw new Error('Invalid data passed to group builder. Failed!');
   }
 
-  const allTags = extractAllTags(testCases);
-  return extractAllGroups(allTags, tagForGrouping);
+  const scenarioTags = extractAllTags(scenarios);
+  return buildUniqueGroups(scenarioTags, tagForGrouping);
 };
-
-console.log(groups(data, tagForGrouping));

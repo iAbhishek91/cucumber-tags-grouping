@@ -1,7 +1,16 @@
 import getValidTestCases from './getValidTestCases';
+import groupBuilder from './groupBuilder';
 
-const a = async () => {
-  console.log(JSON.stringify(await getValidTestCases('features/**/*.feature'), undefined, ' '));
+
+export default async (config) => {
+  const {
+    featuresGlobPattern,
+    tagExpression,
+    names,
+    tagForGrouping,
+  } = config;
+
+  const filteredScenarios = await getValidTestCases(featuresGlobPattern, tagExpression, names);
+
+  return groupBuilder(filteredScenarios, tagForGrouping);
 };
-
-a();

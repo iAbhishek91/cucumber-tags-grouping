@@ -1,4 +1,4 @@
-@groupB @on
+@groupB @SW_ALL
 Feature: something with groupB only
   In order to value
   As a role
