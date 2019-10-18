@@ -4,13 +4,31 @@
   "description": "Group feature files or scenario based on cucumber-tags and execute in parallel",
   "main": "index.js",
   "author": "Abhishek Das <i.abhishek.dass@gmail.com>",
-  "license": "UNLICENSED",
+  "license": "ISC",
   "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "BDD",
+    "cucumber",
+    "Parallel run",
+    "Grouping feature file",
+    "Grouping tags"
+  ],
   "scripts": {
     "build": "rm -rf dist && babel src -d dist",
     "lint": "eslint src",
     "test": "cucumber-js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iAbhishek91/cucumber-tags-grouping"
+  },
+  "bugs": {
+    "url": "https://github.com/iAbhishek91/cucumber-tags-grouping/issues"
+  },
+  "homepage": "https://github.com/iAbhishek91/cucumber-tags-grouping/#readme",
   "dependencies": {
     "cucumber": "^6.0.2",
     "glob": "^7.1.4"
