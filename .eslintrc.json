@@ -4,7 +4,7 @@
     "browser": true
   },
   "rules": {
-    "max-len": [ "error", { "code": 100 }],
+    "max-len": [ "error", { "code": 120 }],
     "no-multiple-empty-lines": ["error", { "max": 2 }]
   }
 }

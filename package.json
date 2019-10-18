@@ -8,10 +8,12 @@
   "private": false,
   "scripts": {
     "build": "rm -rf dist && babel src -d dist",
-    "lint": "eslint src"
+    "lint": "eslint src",
+    "test": "cucumber-js"
   },
   "dependencies": {
-    "cucumber": "^6.0.2"
+    "cucumber": "^6.0.2",
+    "glob": "^7.1.4"
   },
   "devDependencies": {
     "@babel/cli": "^7.6.0",

@@ -1,4 +1,4 @@
-import { When } from 'cucumber';
+const { When } = require('cucumber');
 
 When('I have something', () => {
   console.log('I have something');

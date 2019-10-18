@@ -1,17 +1,14 @@
-@groupB @on
-Feature: something with groupB only
+Feature: something with groupC only
   In order to value
   As a role
   I want feature
 
-  @firstB
-  Scenario: First scenario related to groupB
+  Scenario: First scenario related to groupC
     Given I have something
     When I do something
     Then I get something
 
-  @secondB
-  Scenario: Second scenario related to groupB
+  Scenario: Second scenario related to groupC
     Given I have something
     When I do something
     Then I get something
