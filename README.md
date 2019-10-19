@@ -19,40 +19,35 @@ npm install cucumber-tags-grouping --save
 Those who use yarn
 
 ```sh
-yarn add cucumber-tags-grouping --save
+yarn add cucumber-tags-grouping
 ```
 
 ## How to use
 
 Steps are listed below, alternatively one can look at [github boilerplate project](https://github.com/iAbhishek91/boilerblate-cucumber-tags-grouping) for quick start.
 
-In es5
-
-```js
-var cucumberTagGroups = require('cucumber-tags-grouping');
-
-var scenarioGroups = cucumberTagGroups({
-    featuresGlobPattern: 'features/**/*.feature,
-    tagExpression: '@tagName',
-    names: 'featureFileName,
-    tagForGrouping: /GRP/,
-});
-```
-
 In es6
 
 ```js
-import cucumberTagGroups from 'scenarioGroups';
+import cucumberTagGroups from 'cucumber-tags-grouping';
 
-const scenarioGroups = cucumberTagGroups({
-    featuresGlobPattern: 'features/**/*.feature,
-    tagExpression: '@tagName',
-    names: 'featureFileName,
-    tagForGrouping: /GRP/,
-});
+async function test () {
+  var scenarioGroups = await cucumberTagGroups({
+      featuresGlobPattern: 'features/**/*.feature', //required
+      tagForGrouping: /GROUP/, //required
+      tagExpression: undefined, //optional
+      name: undefined, //optional
+  });
+
+  console.log(scenarioGroups);
+}
+
+test(); // output [ '@GROUP_A,@GROUP_DEFAULT', '@GROUP_A,@GROUP_D','@GROUP_DEFAULT','@GROUP_D' ]
 ```
 
 ### cucumberTagGroups param
+
+This function takes one parameter, an object. The object keys are described below.
 
 * featuresGlobPattern:
 
