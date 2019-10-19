@@ -2,7 +2,7 @@
   "name": "cucumber-tags-grouping",
   "version": "1.0.0",
   "description": "Group feature files or scenario based on cucumber-tags and execute in parallel",
-  "main": "index.js",
+  "main": "dist/index.js",
   "author": "Abhishek Das <i.abhishek.dass@gmail.com>",
   "license": "ISC",
   "private": false,
@@ -14,7 +14,8 @@
     "cucumber",
     "Parallel run",
     "Grouping feature file",
-    "Grouping tags"
+    "Grouping tags",
+    "BDD tag expression"
   ],
   "scripts": {
     "build": "rm -rf dist && babel src -d dist",
