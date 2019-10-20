@@ -1,6 +1,6 @@
 {
   "name": "cucumber-tags-grouping",
-  "version": "1.0.3",
+  "version": "2.0.0",
   "description": "Group feature files or scenario based on cucumber-tags and execute in parallel",
   "main": "dist/index.js",
   "author": "Abhishek Das <i.abhishek.dass@gmail.com>",
