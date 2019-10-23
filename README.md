@@ -42,7 +42,9 @@ async function test () {
   console.log(scenarioGroups);
 }
 
-test(); // output [ '@GROUP_A,@GROUP_DEFAULT', '@GROUP_A,@GROUP_D','@GROUP_DEFAULT','@GROUP_D' ]
+test();
+// output [ '@GROUP_A and @GROUP_DEFAULT', '@GROUP_A and @GROUP_D','@GROUP_DEFAULT','@GROUP_D' ]
+// Each element in the array are valid tag expression
 ```
 
 ### cucumberTagGroups param

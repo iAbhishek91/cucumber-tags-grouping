@@ -32,7 +32,7 @@ const buildUniqueGroups = (scenariosTags, tagForGrouping) => {
   const scenariosUniqueTags = scenariosGroupTags.map((scenarioGroupTags) => [...new Set(scenarioGroupTags)]);
 
   // step-3: array of unique groups of grouping tags
-  return [...new Set(scenariosUniqueTags.map((scenarioUniqueTags) => scenarioUniqueTags.join()))];
+  return [...new Set(scenariosUniqueTags.map((scenarioUniqueTags) => scenarioUniqueTags.join(' and ')))];
 };
 
 
