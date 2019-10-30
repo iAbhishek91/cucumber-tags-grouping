@@ -1,4 +1,4 @@
-@groupC @SW_ALL
+@groupC @GROUP_ALL
 Feature: something with groupC only
   In order to value
   As a role
